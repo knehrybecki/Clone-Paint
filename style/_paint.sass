@@ -1,0 +1,77 @@
+.main
+    height: 100%
+    display: flex
+
+    &__toolbar
+        width: 10%
+        background-color: $back-color
+        display: flex
+        justify-content: space-between
+        flex-flow: column
+        border: 1px solid $black
+
+    &__canvas
+        width: 90%
+        height: 100%
+        border: 1px solid $black
+
+.toolbar2
+    display: flex
+    align-content: flex-end
+    flex-flow: column
+    align-items: center
+
+    &__changeColor
+        margin: 20px
+        cursor: pointer
+        text-align: center
+
+    &__changeRangeDrawThickness
+        margin-bottom: 50px
+        text-align: center
+
+.range 
+    width: 90px
+    color: black
+
+.toolbar
+    display: flex
+    flex-flow: column
+    align-items: center
+
+    &__drawLine,
+    &__drawCircle,
+    &__drawRectangle,
+    &__return
+        margin: 5px
+        width: 100%
+        height: 40px
+
+    &__return,
+    &__drawLine
+        margin-top: 20px    
+
+    &__drawRectangle
+        margin-bottom: 20px
+
+.selected
+    background-color: $select
+
+.selected-undo
+    animation: undo 200ms linear
+
+.hidden
+    opacity: 0.5
+
+.fa-solid,
+.fa-regular
+    font-size: 20px
+
+hr
+    width: 100%
+
+@keyframes undo
+    50%
+        background-color: $select
+
+    

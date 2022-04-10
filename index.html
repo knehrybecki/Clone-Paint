@@ -1,0 +1,40 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="/style/reset.css">
+    <script src="https://kit.fontawesome.com/b20687152d.js" crossorigin="anonymous"></script>
+    <title>Paint</title>
+</head>
+<body>
+    <div class="main">
+        <div class="main__toolbar">
+            <div class="toolbar">
+            <button class="toolbar__drawLine"><i class="fa-solid fa-pencil"></i></button>
+            <button class="toolbar__drawCircle"><i class="fa-regular fa-circle"></i></button>
+            <button class="toolbar__drawRectangle"><i class="fa-regular fa-square-full"></i></button>
+            <hr color="#000">
+            <button class="toolbar__return"><i class="fa-solid fa-arrow-rotate-left"></i></button>
+        </div>
+            <div class="toolbar2">
+            <div class="toolbar2__changeColor">
+                <label for="color" style="font-size: medium;">Color:
+                <input type="color" class="color" name="color" value="#000">
+            </label>
+            </div>
+            <div class="toolbar2__changeRangeDrawThickness">
+                Range Thickness:
+                <input type="range" name="thickness" class="range" value="1" min="1" max="5">
+                <div class="rangeValue">1</div>
+            </div>
+            </div>
+        </div>
+        <canvas class="main__canvas">
+        </canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+    
