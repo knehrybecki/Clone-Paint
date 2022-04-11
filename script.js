@@ -17,11 +17,11 @@ canvas.height = window.innerHeight - canvasOffsetY
 
 let isPainting = false
 let lineWidth = 1
-let StartX
-let StartY
+let startX
+let startY
 
 let linesArray = []
-let index  = -1
+let index = -1
 
 const saveDraw = () => {
     linesArray = linesArray.concat(ctx.getImageData(0, 0, canvas.width, canvas.height))
@@ -57,7 +57,7 @@ const drawCircle = event => {
  
     ctx.beginPath()
 
-    radius = Math.sqrt(Math.pow((StartX - mouseX), 2) + Math.pow((mouseY - StartY), 2))
+    radius = Math.sqrt(Math.pow((startX - mouseX), 2) + Math.pow((mouseY - startY), 2))
 
     ctx.arc(mouseX,event.clientY,radius, 0, 2.0 * Math.PI)
 
@@ -79,10 +79,10 @@ const drawRect = event => {
     mouseX = parseInt(event.clientX - canvasOffsetX)
     mouseY = parseInt(event.clientY - canvasOffsetY)
 
-    let width = mouseX - StartX
-    let height = mouseY - StartY
+    let width = mouseX - startX
+    let height = mouseY - startY
 
-    ctx.strokeRect(StartX, StartY, width, height)
+    ctx.strokeRect(startX, startY, width, height)
   
     ctx.stroke()
 }
@@ -156,7 +156,7 @@ returnMove.addEventListener('click', () => {
 
     setTimeout(() => {
         returnMove.classList.remove('selected-undo')
-    }, 200);
+    }, 200)
 })
 
 colorStroke.addEventListener('change', () => {
@@ -172,8 +172,8 @@ inputRange.addEventListener('change', () => {
 canvas.addEventListener('mousedown', event => {
     isPainting = true
 
-    StartX = parseInt(event.clientX - canvasOffsetX)
-    StartY = parseInt(event.clientY)
+    startX = parseInt(event.clientX - canvasOffsetX)
+    startY = parseInt(event.clientY)
 
     ctx.beginPath()
 })
